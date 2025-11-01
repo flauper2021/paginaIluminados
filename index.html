@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="./assets/image/icons/spider.svg">
+        <title>Spider-Man</title>
+        <!-- Styles -->
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <nav class="s-menu">
+                <ul class="s-menu__list">                    
+                    <li class="s-menu__item s-menu__icon">
+                        <img src="./assets/backgrounds/logo-iluminados1.png" alt="simbolo do clã Iluminados">
+                    </li>                    
+                </ul>
+                <h1 class="s-menu">
+                    CLÃ ILUMINADOS
+                </h1>
+            </nav>
+        </header>
+
+        <main>
+            <div class="s-container">
+                
+                <div class="s-card-carousel" style="transform: translateZ(-40vw) rotatey(0deg);">
+                    <a href="#" class="s-card" id="spider-man-01">
+                        <img class="s-card__background" src="./assets/backgrounds/pic-sm-bg-01.jpg" >
+                        <img class="s-card__img" src="./assets/backgrounds/alokaLogo.png" alt="Tobey Maguire como o Homem Aranha">
+                        <h2 class="s-card__title">Aloka</h2>
+                    </a>
+
+                    <a href="#" class="s-card" id="spider-man-02">
+                        <img class="s-card__background" src="./assets/backgrounds/pic-sm-bg-02.jpg" >
+                        <img class="s-card__img" src="./assets/backgrounds/capsLogo.png" alt="Andrew Garfield como o Homem Aranha">
+                        <h2 class="s-card__title">caps</h2>
+                    </a>
+
+                    <a href="#" class="s-card" id="spider-man-03">
+                        <img class="s-card__background" src="./assets/backgrounds/pic-sm-bg-03.jpg" >
+                        <img class="s-card__img" src="./assets/backgrounds/facaLogo.png" alt="Tom Holland como o Homem Aranha">
+                        <h2 class="s-card__title">faca</h2>
+                    </a>
+
+                    <a href="#" class="s-card" id="spider-man-02">
+                        <img class="s-card__background" src="./assets/backgrounds/pic-sm-bg-02.jpg" >
+                        <img class="s-card__img" src="./assets/backgrounds/mafiaLogo.png" alt="Andrew Garfield como o Homem Aranha">
+                        <h2 class="s-card__title">Mafia</h2>
+                    </a>
+
+                    <a href="#" class="s-card" id="spider-man-03">
+                        <img class="s-card__background" src="./assets/backgrounds/pic-sm-bg-03.jpg" >
+                        <img class="s-card__img" src="./assets/backgrounds/pintoLogo.png" alt="Tom Holland como o Homem Aranha">
+                        <h2 class="s-card__title">Pinto</h2>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div class="s-controller">
+                <div id="1" onclick=selectCarouselItem(this) class="s-controller__button s-controller__button--active">
+                    01
+                </div>
+
+                <div id="2" onclick=selectCarouselItem(this) class="s-controller__button ">
+                    02
+                </div>
+
+                <div id="3" onclick=selectCarouselItem(this) class="s-controller__button ">
+                    03
+                </div>
+
+                <div id="4" onclick=selectCarouselItem(this) class="s-controller__button ">
+                    04
+                </div>
+
+                <div id="5" onclick=selectCarouselItem(this) class="s-controller__button ">
+                    05
+                </div>
+
+                <div class="s-controller__line"></div>
+            </div>
+            
+        </main>
+
+        <footer></footer>
+
+        <!-- Scripts -->
+        <script src="./engine/main-engine.js" defer></script>    
+    </body>
+
+</html>

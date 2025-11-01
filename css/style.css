@@ -1,0 +1,205 @@
+@import url(./reset.css);
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);    
+}
+
+body::before {
+    content:"";
+    background-image: url("../assets/backgrounds/ragnarok_background.png");
+    background-repeat:repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: .3;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.s-menu {
+    padding: 1rem 0;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.s-menu__item {
+    display: inline-block;
+    text-transform: uppercase;    
+}
+
+.s-menu__icon {
+    width: 2rem;
+    margin-left: -2.5rem;    
+}   
+
+.s-container {
+    position: relative;
+    display:flex;    
+    align-items: center;
+    justify-content: space-evenly;
+    perspective: 3000px;
+}
+
+.s-card {
+    border: .5rem solid var(--secondary-color);
+    width: 90%;
+    height: 50vh;
+    position: absolute;
+    transition: filter .5s ease-in-out;
+}
+
+.s-card__background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.s-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    transition: transform 1s ease-in-out;
+}
+
+.s-card__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transition: bottom 1s ease-in-out;
+}
+
+.s-controller {
+    position: absolute;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    margin-top: 3rem;
+    bottom: 1.5rem;
+    width: 100%;
+}
+
+.s-controller__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: .125rem solid var(--secondary-color);
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    transition: transform .3s ease-in-out;
+}
+
+.s-controller__button:nth-child(1) {
+    margin: 0 3.5rem;
+}
+
+.s-controller__button {
+    margin: 0 3.5rem;
+}
+
+.s-controller__button:nth-last-child {
+    margin: 0 3.5rem;
+}
+
+.s-controller__button--active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: solid .1875rem var(--primary-color);
+    outline: solid .125rem var(--secondary-color);
+}
+
+.s-controller__line {
+    width: 50%;
+    height: .125rem;
+    position: absolute;
+    background-color: var(--secondary-color);
+}
+
+/* -- animação dos cards -- */
+
+.s-card--hovered .s-card__background {
+    cursor: pointer;
+    opacity: 0;    
+}
+
+.s-card--hovered .s-card__img {
+    transform: scale(1.5);
+    filter: drop-shadow(30px 10px 4px rgba(0, 0, 0, .5));
+    transition: filter 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.s-card:nth-child(1) {
+    transform: rotatey(0deg) translateZ(50vw);
+}
+
+.s-card:nth-child(2) {
+    transform: rotatey(72deg) translateZ(50vw);
+}
+
+.s-card:nth-child(3) {
+    transform: rotatey(144deg) translateZ(50vw);
+}
+
+.s-card:nth-child(4) {
+    transform: rotatey(216deg) translateZ(50vw);
+}
+
+.s-card:nth-child(5) {
+    transform: rotatey(288deg) translateZ(50vw);
+}
+
+/* -- animação de fundo ao passar o mouse -- */
+
+body#spider-man-01-hovered::before {
+    background-image: url("/assets/backgrounds/pic-sm-bg-01.jpg");    
+}
+
+body#spider-man-02-hovered::before {
+    background-image: url("/assets/backgrounds/pic-sm-bg-02.jpg");    
+}
+
+body#spider-man-03-hovered::before {
+    background-image: url("/assets/backgrounds/pic-sm-bg-03.jpg");    
+}
+
+body[id^="spider-man-"]::before {
+    opacity: 1;
+}
+
+body[id^="spider-man-"] .s-card:not(.s-card--hovered) {
+    filter: grayscale(100%);
+}
+
+.s-card--hovered .s-card__title {
+    bottom: 50%;
+}
+
+/*-- animação do carrosel --*/
+
+.s-card-carousel {
+    display: flex;
+    justify-content: center;
+    width: calc(100vw / 3 - 10%);
+    transform-style: preserve-3d;
+    transition: transform .5s ease-in;
+}
